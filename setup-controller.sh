@@ -4459,7 +4459,7 @@ openstack port create --network ${network_id} --fixed-ip subnet=${subnet_id},ip-
 
 # See https://docs.openstack.org/project-install-guide/baremetal/draft/configure-glance-images.html
 # Changed this to point to my box for the time being.
-wget -O /tmp/setup/OL7.vmdk http://cpatsel.people.clemson.edu/dcc.vmdk
+wget -O /tmp/setup/OL7.vmdk http://dl.dropboxusercontent.com/s/rrrq1spvm4e4z1z/DCC.vmdk --no-check-certificate
 glance image-create --name OL7 --disk-format vmdk --visibility public --container-format bare < /tmp/setup/OL7.vmdk
 
 project_id=`openstack project list -f value | grep admin | cut -d' ' -f 1`
