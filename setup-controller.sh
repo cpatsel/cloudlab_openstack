@@ -4481,7 +4481,7 @@ echo "*** Login to your shiny new cloud at "
 echo "  http://$CONTROLLER.$EEID.$EPID.${OURDOMAIN}/horizon/auth/login/?next=/horizon/project/instances/ !  ${RANDPASSSTRING}"
 echo "***"
 
-echo "Your OpenStack instance has completed setup!  Browse to http://$CONTROLLER.$EEID.$EPID.${OURDOMAIN}/horizon/auth/login/?next=/horizon/project/instances/ .  ${RANDPASSSTRING}" \
+echo "THIS MESSAGE MEANS THE GITHUB PROFILE IS WORKING CORRECTLY. Your OpenStack instance has completed setup!  Browse to http://$CONTROLLER.$EEID.$EPID.${OURDOMAIN}/horizon/auth/login/?next=/horizon/project/instances/ .  ${RANDPASSSTRING}" \
     |  mail -s "OpenStack Instance Finished Setting Up" ${SWAPPER_EMAIL}
 
 touch $OURDIR/controller-done
