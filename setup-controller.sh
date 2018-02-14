@@ -4453,10 +4453,10 @@ network_id=`openstack network show -f shell flat-lan-1-net | grep "^id=" | cut -
 subnet_id=`openstack network show -f shell flat-lan-1-net | grep "^subnets=" | cut -d'"' -f 2`
 
 # See https://docs.openstack.org/python-openstackclient/pike/cli/command-objects/port.html
-openstack port create --network ${network_id} --fixed-ip subnet=${subnet_id},ip-address=10.11.10.5 testport1
-openstack port create --network ${network_id} --fixed-ip subnet=${subnet_id},ip-address=10.11.10.6 testport2
-openstack port create --network ${network_id} --fixed-ip subnet=${subnet_id},ip-address=10.11.10.7 testport3
-openstack port create --network ${network_id} --fixed-ip subnet=${subnet_id},ip-address=10.11.10.8 testport4
+openstack port create --network ${network_id} --fixed-ip subnet=${subnet_id},ip-address=10.11.10.35 testport1
+openstack port create --network ${network_id} --fixed-ip subnet=${subnet_id},ip-address=10.11.10.36 testport2
+openstack port create --network ${network_id} --fixed-ip subnet=${subnet_id},ip-address=10.11.10.37 testport3
+openstack port create --network ${network_id} --fixed-ip subnet=${subnet_id},ip-address=10.11.10.38 testport4
 
 # See https://docs.openstack.org/project-install-guide/baremetal/draft/configure-glance-images.html
 # Changed this to point to my box for the time being.
