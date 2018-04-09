@@ -4514,7 +4514,7 @@ rm /tmp/setup/computeVM.vmdk
 ## For Storage Node image
 wget -O /tmp/setup/storage.vmdk https://clemson.box.com/shared/static/3d9aithd4k7exhjru9z50eg3458frjah.vmdk
 glance image-delete $image_id
-glance image-create --name storageVM --disk-format vmdk --visibility public --container-format bare < /tmp/setup/storageVM.vmdk
+glance image-create --name storageVM --disk-format vmdk --visibility public --container-format bare < /tmp/setup/storage.vmdk
 
 #Storage Nodes
 #Image id
@@ -4549,17 +4549,6 @@ rm /tmp/setup/storageVM.vmdk
 
 # See https://docs.openstack.org/mitaka/install-guide-ubuntu/launch-instance-selfservice.html
 #openstack server create --flavor m1.medium --security-group $security_id --image OL7 --nic port-id=$port_id headnode
-
-
-
-
-
-
-
-
-
-
-
 
 
 wait
