@@ -4492,24 +4492,24 @@ port_id=`openstack port list -f value | grep headport | cut -d' ' -f 1`
 
 #headnode 
 openstack server create --flavor m1.medium --security-group $security_id --image HDP --nic port-id=$port_id headnode &
-##rm /tmp/setup/OL7.vmdk
+rm /tmp/setup/HDP.vmdk
 
 
 ### For Compute Node image
-##wget -O /tmp/setup/computeVM.vmdk https://clemson.box.com/shared/static/r71gbsndqcf061btugwsgcv3ezap1y58.vmdk
-##glance image-delete $image_id
-##glance image-create --name computeVM --disk-format vmdk --visibility public --container-format bare < /tmp/setup/computeVM.vmdk
+wget -O /tmp/setup/blankVM.vmdk https://clemson.box.com/shared/static/mznvj2opd4vs2d002j2mxweghhp9qpw6.vmdk
+glance image-delete $image_id
+glance image-create --name blankVM --disk-format vmdk --visibility public --container-format bare < /tmp/setup/blankVM.vmdk
 
 #Image id
 ##image_id=`openstack image list -f value | grep computeVM | cut -d' ' -f 1`
 
 #Compute Nodes Instances
 port_id=`openstack port list -f value | grep computeport1 | cut -d' ' -f 1`
-openstack server create --flavor m1.medium --security-group $security_id --image HDP --nic port-id=$port_id compute001 &
+openstack server create --flavor m1.medium --security-group $security_id --image blankVM --nic port-id=$port_id compute001 &
 port_id=`openstack port list -f value | grep computeport2 | cut -d' ' -f 1`
-openstack server create --flavor m1.medium --security-group $security_id --image HDP --nic port-id=$port_id compute002 &
+openstack server create --flavor m1.medium --security-group $security_id --image blankVM --nic port-id=$port_id compute002 &
 port_id=`openstack port list -f value | grep computeport3 | cut -d' ' -f 1`
-openstack server create --flavor m1.medium --security-group $security_id --image HDP --nic port-id=$port_id compute003 &
+openstack server create --flavor m1.medium --security-group $security_id --image blankVM --nic port-id=$port_id compute003 &
 
 ###rm /tmp/setup/computeVM.vmdk
 
@@ -4523,9 +4523,9 @@ openstack server create --flavor m1.medium --security-group $security_id --image
 ##image_id=`openstack image list -f value | grep storageVM | cut -d' ' -f 1`
 
 port_id=`openstack port list -f value | grep storageport1 | cut -d' ' -f 1`
-openstack server create --flavor m1.medium --security-group $security_id --image HDP --nic port-id=$port_id storage001 &
+openstack server create --flavor m1.medium --security-group $security_id --image blankVM --nic port-id=$port_id storage001 &
 port_id=`openstack port list -f value | grep storageport2 | cut -d' ' -f 1`
-openstack server create --flavor m1.medium --security-group $security_id --image HDP --nic port-id=$port_id storage002 &
+openstack server create --flavor m1.medium --security-group $security_id --image blankVM --nic port-id=$port_id storage002 &
 
 
 ##rm /tmp/setup/storageVM.vmdk
