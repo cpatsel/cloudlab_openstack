@@ -4523,9 +4523,9 @@ openstack server create --flavor m1.medium --security-group $security_id --image
 ##image_id=`openstack image list -f value | grep storageVM | cut -d' ' -f 1`
 
 port_id=`openstack port list -f value | grep storageport1 | cut -d' ' -f 1`
-openstack server create --flavor m1.medium --security-group $security_id --image blankVM --nic port-id=$port_id storage001 &
+openstack server create --flavor m1.medium --security-group $security_id --image HDP --nic port-id=$port_id storage001 &
 port_id=`openstack port list -f value | grep storageport2 | cut -d' ' -f 1`
-openstack server create --flavor m1.medium --security-group $security_id --image blankVM --nic port-id=$port_id storage002 &
+openstack server create --flavor m1.medium --security-group $security_id --image HDP --nic port-id=$port_id storage002 &
 
 
 ##rm /tmp/setup/storageVM.vmdk
