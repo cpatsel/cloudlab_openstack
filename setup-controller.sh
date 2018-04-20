@@ -4476,7 +4476,7 @@ openstack port create --network ${network_id} --fixed-ip subnet=${subnet_id},ip-
 
 ### For Head Node image
 ####wget -O /tmp/setup/OL7.vmdk https://clemson.box.com/shared/static/xkvrbukdz0tdkt1e21aaozp9vevsly8b.vmdk --no-check-certificate
-wget -O /tmp/setup/HDP.vmdk https://clemson.box.com/shared/static/n1ifxdxpt9awbqn5e9w1x429nppgdzub.vmdk --no-check-certificate
+wget -O /tmp/setup/HDP.vmdk https://clemson.box.com/shared/static/mznvj2opd4vs2d002j2mxweghhp9qpw6.vmdk --no-check-certificate
 
 glance image-create --name HDP --disk-format vmdk --visibility public --container-format bare < /tmp/setup/HDP.vmdk
 
